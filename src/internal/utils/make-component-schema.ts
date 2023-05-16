@@ -92,7 +92,8 @@ const makeComponentSchemaBySchemaType: Record<
 
     return enrichOpenApiSchema(makeComponentSchema(customSchema.serDes.serializedSchema(), fwd), s);
   },
-  // JSON / OpenAPI don't directly support dates, but Date objects are encoded as ISO DateTime strings with yaschema
+  // JSON / OpenAPI don't directly support dates, but Date objects are encoded as ISO DateTime strings with yaschema.  Also, date range
+  // values cant be restricted using OpenAPI directly.
   date: (s, fwd) => enrichOpenApiSchema(makeComponentSchema(schema.regex(dateRegex), fwd), s),
   deprecated: (s, fwd) => {
     const deprecatedSchema = s as schema.DeprecatedSchema<any>;
@@ -102,7 +103,10 @@ const makeComponentSchemaBySchemaType: Record<
   not: (s, fwd) => {
     const notSchema = s as schema.NotSchema<any, void>;
 
-    return enrichOpenApiSchema({ not: makeComponentSchema(notSchema.notSchema, fwd) }, s);
+    return enrichOpenApiSchema(
+      { allOf: [makeComponentSchema(notSchema.schema, fwd), { not: makeComponentSchema(notSchema.notSchema, fwd) }] },
+      s
+    );
   },
   number: (s) => {
     const numberSchema = s as schema.NumberSchema<number>;

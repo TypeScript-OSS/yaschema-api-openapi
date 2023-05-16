@@ -1,8 +1,10 @@
+import './internal/init/init-build-component-schema-if-needed-impl';
+
 import type { OpenAPIV3_1 } from 'openapi-types';
 import type { GenericHttpApi } from 'yaschema-api';
 
-import { convertParameterizedUrlInfoToOpenApiServerObjectFormat } from './internal-utils/convert-parameterized-url-info-to-open-api-server-object-format';
-import { makeOpenApiPathsAndComponentsForApis } from './internal-utils/make-open-api-paths-and-components-for-apis';
+import { convertParameterizedUrlInfoToOpenApiServerObjectFormat } from './internal/utils/convert-parameterized-url-info-to-open-api-server-object-format';
+import { makeOpenApiPathsAndComponentsForApis } from './internal/utils/make-open-api-paths-and-components-for-apis';
 import type { ApiSchemaOptions } from './types/ApiSchemaOptions';
 
 export const makeOpenApiSchemaFromYaschemaHttpApis = (apis: GenericHttpApi[], options: ApiSchemaOptions): OpenAPIV3_1.Document => {

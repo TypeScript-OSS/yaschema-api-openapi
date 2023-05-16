@@ -1,6 +1,6 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 
-import type { NonBodyRequestPart } from '../internal-types/NonBodyRequestPart';
+import type { NonBodyRequestPart } from '../internal/types/NonBodyRequestPart';
 
 export const findOpenApiParameter = (
   parameters: Array<OpenAPIV3_1.ReferenceObject | OpenAPIV3_1.ParameterObject> | undefined,

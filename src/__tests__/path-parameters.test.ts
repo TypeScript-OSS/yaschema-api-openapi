@@ -116,6 +116,12 @@ describe('path parameters', () => {
     expect(numericQ).toBeDefined();
     expect(numericQ?.required).toBeFalsy();
 
+    const test_POST_post_RequestQuery_limit = openApiSchema.components?.schemas?.['test_POST_post_RequestQuery_limit'];
+    expect(test_POST_post_RequestQuery_limit).toBeDefined();
+    expect(test_POST_post_RequestQuery_limit).toMatchObject({
+      oneOf: [{ type: 'number' }, { allOf: [{ type: 'number' }, { type: 'number', enum: [50, 100] }] }]
+    });
+
     console.log('openApiSchema', JSON.stringify(openApiSchema, undefined, 2));
   });
 });

@@ -1,6 +1,6 @@
 import type { Schema } from 'yaschema';
 
-import type { Field } from '../internal-types/Field';
+import type { Field } from '../types/Field';
 import { determineAllPossibleDirectFieldNamesOfSchema } from './determine-all-possible-direct-field-names-of-schema';
 import { getDirectFieldByName } from './get-direct-field-by-name';
 

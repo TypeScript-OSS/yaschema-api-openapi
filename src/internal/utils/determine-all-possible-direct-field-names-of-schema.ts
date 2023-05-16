@@ -1,8 +1,8 @@
 import type { MarkerType, Schema, schema } from 'yaschema';
 import { markerTypes } from 'yaschema';
 
-import type { MarkerSchema } from '../internal-types/MarkerSchema';
-import type { WrapperSchema } from '../internal-types/WrapperSchema';
+import type { MarkerSchema } from '../types/MarkerSchema';
+import type { WrapperSchema } from '../types/WrapperSchema';
 
 export const determineAllPossibleDirectFieldNamesOfSchema = (rootSchema: Schema): string[] => {
   if (markerTypes.has(rootSchema.schemaType)) {

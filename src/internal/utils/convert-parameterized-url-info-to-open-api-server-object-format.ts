@@ -1,6 +1,6 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 
-import type { ParameterizedUrlInfo } from '../types/ParameterizedUrlInfo';
+import type { ParameterizedUrlInfo } from '../../types/ParameterizedUrlInfo';
 
 export const convertParameterizedUrlInfoToOpenApiServerObjectFormat = (info: ParameterizedUrlInfo): OpenAPIV3_1.ServerObject => ({
   url: info.url,

@@ -1,7 +1,7 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 
-import type { Field } from '../internal-types/Field';
-import type { NonBodyRequestPart } from '../internal-types/NonBodyRequestPart';
+import type { Field } from '../types/Field';
+import type { NonBodyRequestPart } from '../types/NonBodyRequestPart';
 import { isValueOptionalForSchema } from './is-value-optional-for-schema';
 import { makeComponentsRefPathForField } from './make-components-ref-path-for-field';
 import { makeOpenApiSafeComponentNamePrefixDerivedFrom } from './make-open-api-safe-component-name-prefix-derived-from';

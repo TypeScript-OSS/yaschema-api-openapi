@@ -1,7 +1,7 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 import type { GenericHttpApi } from 'yaschema-api';
 
-import { openApiMethodByHttpMethod } from '../internal-consts/open-api-method-by-http-method';
+import { openApiMethodByHttpMethod } from '../consts/open-api-method-by-http-method';
 import { getUrlPathnameUsingRouteType } from './get-url-pathname';
 import { isUnsupportedHttpMethod } from './is-unsupported-http-method';
 import { makeOpenApiOperationForApi } from './make-open-api-operation-for-api';

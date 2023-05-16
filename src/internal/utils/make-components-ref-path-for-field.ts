@@ -1,6 +1,6 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 
-import type { Field } from '../internal-types/Field';
+import type { Field } from '../types/Field';
 import { buildComponentSchemaIfNeeded } from './build-component-schema-if-needed';
 import { makeComponentsRefPathForSchema } from './make-components-ref-path-for-schema';
 

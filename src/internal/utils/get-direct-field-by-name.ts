@@ -1,9 +1,9 @@
 import type { MarkerType, Schema } from 'yaschema';
 import { markerTypes, schema } from 'yaschema';
 
-import type { Field } from '../internal-types/Field';
-import type { MarkerSchema } from '../internal-types/MarkerSchema';
-import type { WrapperSchema } from '../internal-types/WrapperSchema';
+import type { Field } from '../types/Field';
+import type { MarkerSchema } from '../types/MarkerSchema';
+import type { WrapperSchema } from '../types/WrapperSchema';
 import { isValueOptionalForSchema } from './is-value-optional-for-schema';
 
 export const getDirectFieldByName = (rootSchema: Schema, lookForFieldName: string): Field | undefined => {
