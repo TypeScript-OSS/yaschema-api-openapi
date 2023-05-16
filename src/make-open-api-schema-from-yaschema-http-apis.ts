@@ -2,8 +2,7 @@ import type { OpenAPIV3_1 } from 'openapi-types';
 import type { GenericHttpApi } from 'yaschema-api';
 
 import { convertParameterizedUrlInfoToOpenApiServerObjectFormat } from './internal-utils/convert-parameterized-url-info-to-open-api-server-object-format';
-// import { makeOpenApiComponentsForYaschemaHttpApis } from './internal-utils/make-open-api-components-for-yaschema-http-apis';
-import { makeOpenApiPathsForYaschemaHttpApis } from './internal-utils/make-open-api-paths-for-yaschema-http-apis';
+import { makeOpenApiPathsAndComponentsForApis } from './internal-utils/make-open-api-paths-and-components-for-apis';
 import type { ApiSchemaOptions } from './types/ApiSchemaOptions';
 
 export const makeOpenApiSchemaFromYaschemaHttpApis = (apis: GenericHttpApi[], options: ApiSchemaOptions): OpenAPIV3_1.Document => {
@@ -11,6 +10,8 @@ export const makeOpenApiSchemaFromYaschemaHttpApis = (apis: GenericHttpApi[], op
   const skipApisSet = new Set(options.skipApis ?? []);
 
   const filteredApis = apis.filter((api) => !skipApisForRouteTypesSet.has(api.routeType) && !skipApisSet.has(api));
+
+  const { paths, components } = makeOpenApiPathsAndComponentsForApis(filteredApis);
 
   return {
     openapi: '3.1.0',
@@ -33,7 +34,7 @@ export const makeOpenApiSchemaFromYaschemaHttpApis = (apis: GenericHttpApi[], op
     },
     externalDocs: options.externalDocs,
     servers: options.serverInfo?.map(convertParameterizedUrlInfoToOpenApiServerObjectFormat),
-    paths: makeOpenApiPathsForYaschemaHttpApis(filteredApis)
-    // components: makeOpenApiComponentsForYaschemaHttpApis(filteredApis)
+    paths,
+    components
   };
 };

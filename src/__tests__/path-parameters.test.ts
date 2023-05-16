@@ -115,5 +115,7 @@ describe('path parameters', () => {
     const numericQ = findOpenApiParameter(openApiSchema.paths!['/post']!.post!.parameters, { name: 'numericQ', requestPart: 'query' });
     expect(numericQ).toBeDefined();
     expect(numericQ?.required).toBeFalsy();
+
+    console.log('openApiSchema', JSON.stringify(openApiSchema, undefined, 2));
   });
 });
