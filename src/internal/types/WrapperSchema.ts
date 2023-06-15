@@ -4,5 +4,9 @@ import type { MarkerSchema } from './MarkerSchema';
 
 export type WrapperSchema = Exclude<
   MarkerSchema,
-  schema.AllOfSchema<any, any> | schema.NotSchema<any, any> | schema.OneOfSchema<any, any> | schema.UpgradedSchema<any, any>
+  | schema.AllOfSchema<any, any>
+  | schema.AllowEmptyStringSchema<any>
+  | schema.NotSchema<any, any>
+  | schema.OneOfSchema<any, any>
+  | schema.UpgradedSchema<any, any>
 >;

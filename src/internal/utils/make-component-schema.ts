@@ -52,10 +52,17 @@ const makeComponentSchemaBySchemaType: Record<
 
     return enrichOpenApiSchema({ allOf: allOfSchema.schemas.map((subschema) => makeComponentSchema(subschema, fwd)) }, s);
   },
-  allowEmptyString: (s, fwd) => {
-    const allowEmptyString = s as schema.AllowEmptyStringSchema<any>;
+  allowEmptyString: (s) => {
+    const allowEmptyStringSchema = s as schema.AllowEmptyStringSchema<string>;
 
-    return enrichOpenApiSchema(makeComponentSchemaForOneOf([allowEmptyString.schema, schema.string('')], fwd), s);
+    return enrichOpenApiSchema(
+      {
+        type: 'string',
+        enum: allowEmptyStringSchema.allowedValues.length > 0 ? [...allowEmptyStringSchema.allowedValues, ''] : undefined,
+        minLength: 0
+      },
+      s
+    );
   },
   allowNull: (s, { inOutComponentSchemas }) => {
     const allowNullSchema = s as schema.AllowNullSchema<any>;

@@ -220,10 +220,8 @@ describe('makeComponentSchema', () => {
       inOutComponentSchemas
     });
     expect(theSchema).toMatchObject({
-      oneOf: [
-        { type: 'string', minLength: 1 },
-        { type: 'string', enum: [''], minLength: 0 }
-      ]
+      type: 'string',
+      minLength: 0
     });
   });
 
