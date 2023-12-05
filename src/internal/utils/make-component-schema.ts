@@ -115,6 +115,9 @@ const makeComponentSchemaBySchemaType: Record<
       s
     );
   },
+  null: (s) => {
+    return enrichOpenApiSchema({ type: 'null' }, s);
+  },
   number: (s) => {
     const numberSchema = s as schema.NumberSchema<number>;
 
@@ -207,6 +210,10 @@ const makeComponentSchemaBySchemaType: Record<
       },
       s
     );
+  },
+  undefined: (s) => {
+    // Since undefined isn't a valid JSON value, this doesn't translate well for OpenAPI.
+    return enrichOpenApiSchema({ oneOf: [] }, s);
   },
   upgraded: (s, fwd) => {
     const upgradedSchema = s as schema.UpgradedSchema<any, any>;
