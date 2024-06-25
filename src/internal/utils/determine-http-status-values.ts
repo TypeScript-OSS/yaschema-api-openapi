@@ -1,6 +1,6 @@
 import type { Schema, schema } from 'yaschema';
 
-import { anyHttpStatusValues } from '../consts/open-api-http-status-ranges';
+import { anyHttpStatusValues } from '../consts/open-api-http-status-ranges.js';
 
 export const determineHttpStatusValues = (statusSchema: Schema): string[] => {
   switch (statusSchema.schemaType) {

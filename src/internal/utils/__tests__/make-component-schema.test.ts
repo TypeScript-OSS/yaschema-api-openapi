@@ -1,9 +1,9 @@
-import '../../init/init-build-component-schema-if-needed-impl';
+import '../../init/init-build-component-schema-if-needed-impl.js';
 
 import type { OpenAPIV3_1 } from 'openapi-types';
 import { schema } from 'yaschema';
 
-import { makeComponentSchema } from '../make-component-schema';
+import { makeComponentSchema } from '../make-component-schema.js';
 
 describe('makeComponentSchema', () => {
   it('should work with allOf schemas', () => {

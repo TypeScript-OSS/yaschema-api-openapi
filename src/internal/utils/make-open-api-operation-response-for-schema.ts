@@ -1,9 +1,9 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 import type { AnyBody, AnyHeaders, AnyStatus, ResponseSchemas } from 'yaschema-api';
 
-import { getAllPossibleDirectFieldsOfSchema } from './get-all-possible-direct-fields-of-schema';
-import { makeComponentsRefPathForField } from './make-components-ref-path-for-field';
-import { makeComponentsRefPathForSchema } from './make-components-ref-path-for-schema';
+import { getAllPossibleDirectFieldsOfSchema } from './get-all-possible-direct-fields-of-schema.js';
+import { makeComponentsRefPathForField } from './make-components-ref-path-for-field.js';
+import { makeComponentsRefPathForSchema } from './make-components-ref-path-for-schema.js';
 
 export const makeOpenApiOperationResponseForSchema = (
   response: ResponseSchemas<AnyStatus, AnyHeaders, AnyBody>,

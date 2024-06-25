@@ -1,6 +1,6 @@
 import { schema } from 'yaschema';
 
-import { isValueOptionalForSchema } from '../is-value-optional-for-schema';
+import { isValueOptionalForSchema } from '../is-value-optional-for-schema.js';
 
 describe('isValueOptionalForSchema', () => {
   it('should work for allOf', () => {

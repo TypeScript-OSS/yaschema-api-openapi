@@ -1,8 +1,8 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 import type { Schema, schema } from 'yaschema';
 
-import { buildComponentSchemaIfNeeded } from './build-component-schema-if-needed';
-import { makeOpenApiSafeComponentNamePrefixDerivedFrom } from './make-open-api-safe-component-name-prefix-derived-from';
+import { buildComponentSchemaIfNeeded } from './build-component-schema-if-needed.js';
+import { makeOpenApiSafeComponentNamePrefixDerivedFrom } from './make-open-api-safe-component-name-prefix-derived-from.js';
 
 export const makeComponentsRefPathForSchema = (
   schema: Schema,

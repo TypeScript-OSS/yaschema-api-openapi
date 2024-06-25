@@ -1,9 +1,9 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 import type { GenericHttpApi } from 'yaschema-api';
 
-import { makeOpenApiOperationParametersForApi } from './make-open-api-operation-parameters-for-api';
-import { makeOpenApiOperationRequestBodyForApi } from './make-open-api-operation-request-body-for-api';
-import { makeOpenApiOperationResponsesForApi } from './make-open-api-operation-responses-for-api';
+import { makeOpenApiOperationParametersForApi } from './make-open-api-operation-parameters-for-api.js';
+import { makeOpenApiOperationRequestBodyForApi } from './make-open-api-operation-request-body-for-api.js';
+import { makeOpenApiOperationResponsesForApi } from './make-open-api-operation-responses-for-api.js';
 
 export const makeOpenApiOperationForApi = (
   api: GenericHttpApi,

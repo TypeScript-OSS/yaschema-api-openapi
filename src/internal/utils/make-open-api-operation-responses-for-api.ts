@@ -1,11 +1,11 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 import type { GenericHttpApi } from 'yaschema-api';
 
-import { defaultFailureHttpStatusValues, defaultSuccessHttpStatusValues } from '../consts/open-api-http-status-ranges';
-import { responseContentTypesByRequestType } from '../consts/response-content-types-by-request-type';
-import { determineHttpStatusValues } from './determine-http-status-values';
-import { makeOpenApiOperationResponseForSchema } from './make-open-api-operation-response-for-schema';
-import { makeOpenApiSafeComponentNamePrefixDerivedFrom } from './make-open-api-safe-component-name-prefix-derived-from';
+import { defaultFailureHttpStatusValues, defaultSuccessHttpStatusValues } from '../consts/open-api-http-status-ranges.js';
+import { responseContentTypesByRequestType } from '../consts/response-content-types-by-request-type.js';
+import { determineHttpStatusValues } from './determine-http-status-values.js';
+import { makeOpenApiOperationResponseForSchema } from './make-open-api-operation-response-for-schema.js';
+import { makeOpenApiSafeComponentNamePrefixDerivedFrom } from './make-open-api-safe-component-name-prefix-derived-from.js';
 
 export const makeOpenApiOperationResponsesForApi = (
   api: GenericHttpApi,

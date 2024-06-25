@@ -1,9 +1,9 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 import type { GenericHttpApi } from 'yaschema-api';
 
-import { getAllPossibleDirectFieldsOfSchema } from './get-all-possible-direct-fields-of-schema';
-import { makeOpenApiOperationParametersForFields } from './make-open-api-operation-parameters-for-fields';
-import { makeOpenApiSafeComponentNamePrefixDerivedFrom } from './make-open-api-safe-component-name-prefix-derived-from';
+import { getAllPossibleDirectFieldsOfSchema } from './get-all-possible-direct-fields-of-schema.js';
+import { makeOpenApiOperationParametersForFields } from './make-open-api-operation-parameters-for-fields.js';
+import { makeOpenApiSafeComponentNamePrefixDerivedFrom } from './make-open-api-safe-component-name-prefix-derived-from.js';
 
 // Helpers
 export const makeOpenApiOperationParametersForApi = (

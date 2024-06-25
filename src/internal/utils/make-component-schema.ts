@@ -2,8 +2,8 @@ import type { OpenAPIV3_1 } from 'openapi-types';
 import type { Schema, SchemaType } from 'yaschema';
 import { schema } from 'yaschema';
 
-import { buildComponentSchemaIfNeeded } from './build-component-schema-if-needed';
-import { isValueOptionalForSchema } from './is-value-optional-for-schema';
+import { buildComponentSchemaIfNeeded } from './build-component-schema-if-needed.js';
+import { isValueOptionalForSchema } from './is-value-optional-for-schema.js';
 
 export const makeComponentSchema = (
   rootSchema: Schema,

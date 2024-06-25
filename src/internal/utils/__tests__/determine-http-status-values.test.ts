@@ -1,7 +1,7 @@
 import { schema } from 'yaschema';
 
-import { anyHttpStatusValues } from '../../consts/open-api-http-status-ranges';
-import { determineHttpStatusValues } from '../determine-http-status-values';
+import { anyHttpStatusValues } from '../../consts/open-api-http-status-ranges.js';
+import { determineHttpStatusValues } from '../determine-http-status-values.js';
 
 describe('determineHttpStatusValues', () => {
   it('should work with generic number schemas', () => {

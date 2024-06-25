@@ -1,11 +1,12 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 import type { GenericHttpApi, HttpRequestType } from 'yaschema-api';
 
-import { isValueOptionalForSchema } from './is-value-optional-for-schema';
-import { makeComponentsRefPathForSchema } from './make-components-ref-path-for-schema';
-import { makeOpenApiSafeComponentNamePrefixDerivedFrom } from './make-open-api-safe-component-name-prefix-derived-from';
+import { isValueOptionalForSchema } from './is-value-optional-for-schema.js';
+import { makeComponentsRefPathForSchema } from './make-components-ref-path-for-schema.js';
+import { makeOpenApiSafeComponentNamePrefixDerivedFrom } from './make-open-api-safe-component-name-prefix-derived-from.js';
 
 const requestContentTypeByRequestType: Record<HttpRequestType, string> = {
+  binary: 'application/octet-stream',
   'form-data': 'multipart/form-data',
   json: 'application/json'
 };

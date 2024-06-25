@@ -1,9 +1,9 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 import type { Schema } from 'yaschema';
 
-import { setBuildComponentSchemaIfNeededImpl } from '../utils/build-component-schema-if-needed';
-import { makeComponentSchema } from '../utils/make-component-schema';
-import { makeComponentsRefPath } from '../utils/make-components-ref-path';
+import { setBuildComponentSchemaIfNeededImpl } from '../utils/build-component-schema-if-needed.js';
+import { makeComponentSchema } from '../utils/make-component-schema.js';
+import { makeComponentsRefPath } from '../utils/make-components-ref-path.js';
 
 const PLACEHOLDER: OpenAPIV3_1.SchemaObject = { $schema: 'PLACEHOLDER' };
 

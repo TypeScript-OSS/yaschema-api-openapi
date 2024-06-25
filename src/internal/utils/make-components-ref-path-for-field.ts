@@ -1,8 +1,8 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 
 import type { Field } from '../types/Field';
-import { buildComponentSchemaIfNeeded } from './build-component-schema-if-needed';
-import { makeComponentsRefPathForSchema } from './make-components-ref-path-for-schema';
+import { buildComponentSchemaIfNeeded } from './build-component-schema-if-needed.js';
+import { makeComponentsRefPathForSchema } from './make-components-ref-path-for-schema.js';
 
 export const makeComponentsRefPathForField = (
   field: Field,

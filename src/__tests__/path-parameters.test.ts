@@ -2,8 +2,8 @@ import { schema } from 'yaschema';
 import type { GenericHttpApi } from 'yaschema-api';
 import { findAllApisInRoot, isHttpApi, makeHttpApi } from 'yaschema-api';
 
-import { findOpenApiParameter } from '../__test_dependency__/find-open-api-parameter';
-import { makeOpenApiSchemaFromYaschemaHttpApis } from '../make-open-api-schema-from-yaschema-http-apis';
+import { findOpenApiParameter } from '../__test_dependency__/find-open-api-parameter.js';
+import { makeOpenApiSchemaFromYaschemaHttpApis } from '../make-open-api-schema-from-yaschema-http-apis.js';
 
 describe('path parameters', () => {
   it('basic parameters should work', () => {

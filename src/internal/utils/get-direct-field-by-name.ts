@@ -4,7 +4,7 @@ import { markerTypes, schema } from 'yaschema';
 import type { Field } from '../types/Field';
 import type { MarkerSchema } from '../types/MarkerSchema';
 import type { WrapperSchema } from '../types/WrapperSchema';
-import { isValueOptionalForSchema } from './is-value-optional-for-schema';
+import { isValueOptionalForSchema } from './is-value-optional-for-schema.js';
 
 export const getDirectFieldByName = (rootSchema: Schema, lookForFieldName: string): Field | undefined => {
   if (markerTypes.has(rootSchema.schemaType)) {

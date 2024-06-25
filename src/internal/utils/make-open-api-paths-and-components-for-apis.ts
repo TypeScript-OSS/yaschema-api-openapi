@@ -1,11 +1,11 @@
 import type { OpenAPIV3_1 } from 'openapi-types';
 import type { GenericHttpApi } from 'yaschema-api';
 
-import { openApiMethodByHttpMethod } from '../consts/open-api-method-by-http-method';
-import { getUrlPathnameUsingRouteType } from './get-url-pathname';
-import { isUnsupportedHttpMethod } from './is-unsupported-http-method';
-import { makeOpenApiOperationForApi } from './make-open-api-operation-for-api';
-import { sortKeys } from './sort-keys';
+import { openApiMethodByHttpMethod } from '../consts/open-api-method-by-http-method.js';
+import { getUrlPathnameUsingRouteType } from './get-url-pathname.js';
+import { isUnsupportedHttpMethod } from './is-unsupported-http-method.js';
+import { makeOpenApiOperationForApi } from './make-open-api-operation-for-api.js';
+import { sortKeys } from './sort-keys.js';
 
 export const makeOpenApiPathsAndComponentsForApis = (
   apis: GenericHttpApi[]

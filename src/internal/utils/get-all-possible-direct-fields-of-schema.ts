@@ -1,8 +1,8 @@
 import type { Schema } from 'yaschema';
 
 import type { Field } from '../types/Field';
-import { determineAllPossibleDirectFieldNamesOfSchema } from './determine-all-possible-direct-field-names-of-schema';
-import { getDirectFieldByName } from './get-direct-field-by-name';
+import { determineAllPossibleDirectFieldNamesOfSchema } from './determine-all-possible-direct-field-names-of-schema.js';
+import { getDirectFieldByName } from './get-direct-field-by-name.js';
 
 export const getAllPossibleDirectFieldsOfSchema = (schema: Schema): Record<string, Field> => {
   const output: Record<string, Field> = {};
