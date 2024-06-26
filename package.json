@@ -31,8 +31,8 @@
   "peerDependencies": {},
   "dependencies": {
     "openapi-types": "^12.1.3",
-    "yaschema": "^3.5.0",
-    "yaschema-api": "^3.6.0"
+    "yaschema": "^3.5.1",
+    "yaschema-api": "^3.6.1"
   },
   "devDependencies": {
     "@eslint/compat": "1.1.0",
