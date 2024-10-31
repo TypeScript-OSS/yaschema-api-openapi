@@ -3,6 +3,7 @@ import type { Schema, schema } from 'yaschema';
 import { anyHttpStatusValues } from '../consts/open-api-http-status-ranges.js';
 
 export const determineHttpStatusValues = (statusSchema: Schema): string[] => {
+  // eslint-disable-next-line @typescript-eslint/switch-exhaustiveness-check
   switch (statusSchema.schemaType) {
     case 'number': {
       const numberSchema = statusSchema as schema.NumberSchema<number>;
