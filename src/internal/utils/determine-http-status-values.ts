@@ -1,3 +1,4 @@
+import isPromise from 'is-promise';
 import type { Schema, schema } from 'yaschema';
 
 import { anyHttpStatusValues } from '../consts/open-api-http-status-ranges.js';
@@ -36,7 +37,13 @@ const checkRange = (statusSchema: Schema, category: number) => {
 
   let containsAll = true;
   for (let statusCode = min; statusCode <= max; statusCode += 1) {
-    if (statusSchema.validate(statusCode).error === undefined) {
+    const validation = statusSchema.validateAsync(statusCode, { forceSync: true });
+    if (isPromise(validation)) {
+      containsAll = false;
+      continue;
+    }
+
+    if (validation.error === undefined) {
       statusValues.push(String(statusCode));
     } else {
       containsAll = false;
