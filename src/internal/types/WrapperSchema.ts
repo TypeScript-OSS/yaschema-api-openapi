@@ -8,5 +8,6 @@ export type WrapperSchema = Exclude<
   | schema.AllowEmptyStringSchema<any>
   | schema.NotSchema<any, any>
   | schema.OneOfSchema<any, any>
+  | schema.RefSchema<any>
   | schema.UpgradedSchema<any, any>
 >;

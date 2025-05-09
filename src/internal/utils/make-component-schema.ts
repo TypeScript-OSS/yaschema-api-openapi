@@ -47,6 +47,10 @@ const makeComponentSchemaBySchemaType: Record<
 
     return output;
   },
+  ref: (s, fwd) => {
+    const refSchema = s as schema.RefSchema<any>;
+    return makeComponentSchema(refSchema.getSchema(), fwd);
+  },
   allOf: (s, fwd) => {
     const allOfSchema = s as schema.AllOfSchema<any, any>;
 

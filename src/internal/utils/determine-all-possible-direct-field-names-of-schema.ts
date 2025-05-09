@@ -1,5 +1,6 @@
 import type { MarkerType, Schema, schema } from 'yaschema';
 import { markerTypes } from 'yaschema';
+import type { RefSchema } from 'yaschema/lib/schema/exports';
 
 import type { MarkerSchema } from '../types/MarkerSchema';
 import type { WrapperSchema } from '../types/WrapperSchema';
@@ -32,6 +33,11 @@ const determineAllPossibleDirectFieldNamesOfAllOfOrOneOfSchema = (s: MarkerSchem
   return output;
 };
 
+const determineAllPossibleDirectFieldNamesOfRefSchema = (s: MarkerSchema) => {
+  const refSchema = s as RefSchema<any>;
+  return determineAllPossibleDirectFieldNamesOfSchema(refSchema.getSchema());
+};
+
 const determineAllPossibleDirectFieldNamesOfWrapperSchema = (s: MarkerSchema) => {
   const wrapperSchema = s as WrapperSchema;
   return determineAllPossibleDirectFieldNamesOfSchema(wrapperSchema.schema);
@@ -53,5 +59,6 @@ const determineAllPossibleDirectFieldNamesOfSchemaByMarkerType: Record<MarkerTyp
   allowNull: determineAllPossibleDirectFieldNamesOfWrapperSchema,
   deprecated: determineAllPossibleDirectFieldNamesOfWrapperSchema,
   optional: determineAllPossibleDirectFieldNamesOfWrapperSchema,
+  ref: determineAllPossibleDirectFieldNamesOfRefSchema,
   root: determineAllPossibleDirectFieldNamesOfWrapperSchema
 };

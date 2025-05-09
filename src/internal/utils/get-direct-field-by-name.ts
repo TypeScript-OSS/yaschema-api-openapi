@@ -1,5 +1,6 @@
 import type { MarkerType, Schema } from 'yaschema';
 import { markerTypes, schema } from 'yaschema';
+import type { RefSchema } from 'yaschema/lib/schema/exports';
 
 import type { Field } from '../types/Field';
 import type { MarkerSchema } from '../types/MarkerSchema';
@@ -26,6 +27,9 @@ export const getDirectFieldByName = (rootSchema: Schema, lookForFieldName: strin
 };
 
 // Helpers
+
+const getDirectFieldByNameForRefSchema = (s: MarkerSchema, lookForFieldName: string) =>
+  getDirectFieldByName((s as RefSchema<any>).getSchema(), lookForFieldName);
 
 const getDirectFieldByNameForWrapperSchema = (s: MarkerSchema, lookForFieldName: string) =>
   getDirectFieldByName((s as WrapperSchema).schema, lookForFieldName);
@@ -109,5 +113,6 @@ const getDirectFieldByNameByMarkerType: Record<MarkerType, (schema: MarkerSchema
   allowEmptyString: getDirectFieldByNameForWrapperSchema,
   allowNull: getDirectFieldByNameForWrapperSchema,
   deprecated: getDirectFieldByNameForWrapperSchema,
+  ref: getDirectFieldByNameForRefSchema,
   root: getDirectFieldByNameForWrapperSchema
 };
